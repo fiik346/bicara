@@ -1,4 +1,5 @@
-$navbarbg: #fff;
-$navbarcolor: var(--bs-gray-800);
-
+$navbarbg: var(--bs-white);
+$navbarcolor: var(--bs-dark);
+$breakpoint: 768px;
 @import 'navbar';
+@import 'fixed-menu';

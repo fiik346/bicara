@@ -1,6 +1,8 @@
 // get object button and nav
 var button = document.querySelector('.navButton');
-var tujuan = document.getElementById('navContent');
+var closeButton = document.querySelector('.closeButton')
+var blurOverlay = document.querySelector('.fixed-menu .blur-overlay');
+var tujuan = document.querySelector('.fixed-menu');
 
 function addClass(item, isClass){
 	item.classList.add(isClass)
@@ -34,8 +36,11 @@ function showCloseNav(){
 	button.setAttribute('aria-expanded', atributValue);
 	addClass(tujuan, classTujuan);
 	removeClass(tujuan, removeTujuan);
-	addClass(button, classTujuan);
-	removeClass(button, removeTujuan)
+	//addClass(button, classTujuan);
+	//removeClass(button, removeTujuan)
 }
 
 button.addEventListener('click', showCloseNav)
+closeButton.addEventListener('click', showCloseNav)
+blurOverlay.addEventListener('click', showCloseNav
+)

@@ -4,6 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "author": "Taufik Nurhidayat",
+  "scripts": {
+    "w": "npx webpack --watch"
+  },
   "dependencies": {
     "@popperjs/core": "^2.11.2",
     "postcss": "^8.4.5",

@@ -1,0 +1,109 @@
+$background: #000;
+$color: #fff;
+$linkcolor: #000;
+.fixed-menu {
+	position: fixed;
+	left: -100%;
+	top: 0;
+	height:100%;
+	width: 100%;
+	transition: 250ms;
+	
+	.blur-overlay {
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+//		transition: 250ms;
+		visibility: hidden;
+		background-color: rgba(0,0,0,0.25)
+	}
+
+	&.expand{
+		left: 0;
+		
+		.blur-overlay {
+			visibility: visible;
+			backdrop-filter: saturate(100%) blur(2px);
+		}
+	}
+	.container {
+		width: 80%;
+		margin-left: 0;
+		height:100%;
+		background-color: #fff;
+		//box-shadow: 5px 0 5px 0 rgba(0,0,0,0.25);
+	}
+}
+
+.fixed-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: $background;
+	height: 3rem;
+	padding: 0 0.75rem;
+	margin: 0 -0.75rem;
+
+	.theTitle {
+		text-transform: uppercase;
+		font-size: 1.25rem;
+		font-weight: bold;
+		//font-style: italic;
+		margin: 0;
+		color: $color;
+
+		a {
+			color: $color;
+			text-decoration: none;
+		}
+	}
+
+	.closeButton {
+		padding: .15rem;
+		border: none;
+		background-color: transparent;
+	}
+	.feather-x {
+		color: $color;
+	}
+}
+
+#fixed-nav {
+	padding-top: .75rem;
+	.nav {
+		margin: 0;
+		padding: 0;
+	}
+	.nav-item {
+		padding: 0;
+		list-style: none;
+		font-weight: 500;	
+		font-size: 1rem;
+		position: relative;
+
+		a {
+			color: $linkcolor;
+			padding: .35rem;
+			margin: 0 -0.35rem;
+			text-decoration: none;
+			display: flex;
+			border-radius: 0.25rem;
+			&:hover {
+				background-color: rgba(0,0,0,0.07);
+				opacity: 0.6;
+			}
+		}
+
+		&.drop::after {
+			content: "∆";
+			position: absolute;
+			transform: rotate(180deg)
+			top: 0;
+			right: 0;
+		}
+	}
+
+}
